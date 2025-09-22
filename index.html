@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Book</title>
+    <link rel="stylesheet" href="style.css">
+    
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <div>
+      <div class="card">
+        <label class="small muted">Search recipes</label>
+        <div class="search">
+          <input id="searchInput" placeholder="Search by name or ingredient...">
+        </div>
+        <div class="filters">
+          <button id="showAllBtn" class="btn btn-ghost">Show All</button>
+          <button id="sortAlpha" class="btn btn-ghost">Sort A→Z</button>
+          <button id="sortNew" class="btn btn-ghost">Newest</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recipe Form -->
+    <form id="recipeForm" class="card" autocomplete="off">
+      <h3>Add / Edit Recipe</h3>
+      <input type="hidden" id="recipeId">
+      <div>
+        <label for="name">Name</label>
+        <input id="name" required placeholder="Recipe name">
+      </div>
+      <div>
+        <label for="ingredients">Ingredients (one per line)</label>
+        <textarea id="ingredients" rows="" placeholder="Enter the Items..."></textarea>
+      </div>
+      <div>
+        <label for="steps">Preparation Steps</label>
+        <textarea id="steps" rows="3" placeholder="Describe the steps..."></textarea>
+      </div>
+      <div>
+        <label for="imageInput">Image (optional)</label>
+        <input id="imageInput" type="file" accept="image/*">
+      </div>
+      <div class="row">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" id="clearBtn" class="btn btn-ghost">Clear</button>
+      </div>
+    </form>
+    <!-- End Recipe Form -->
+
+    <section>
+      <div class="card">
+        <h3 style="margin:0">Recipes</h3>
+        <div id="gallery" class="gallery"></div>
+      </div>
+    </section>
+
+    <footer>
+    Designed and developed by &copy;Phaninder.
+    </footer>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal-backdrop" style="display:none;">
+    <div class="modal card">
+      <div class="modal-header">
+        <div>
+          <h3 id="m-title">Recipe name</h3>
+          <div id="m-sub" class="muted small">metadata</div>
+        </div>
+        <div class="row">
+          <button id="editBtn" class="btn btn-ghost">Edit</button>
+          <button id="delBtn" class="btn btn-ghost">Delete</button>
+          <button id="closeModal" class="btn btn-primary">Close</button>
+        </div>
+      </div>
+      <div class="modal-grid">
+        <div>
+          <img id="m-thumb" class="modal-thumb" src="" alt="recipe image">
+        </div>
+        <div>
+          <h4 class="small muted">Ingredients</h4>
+          <div id="m-ingredients"></div>
+          <h4 class="small muted">Preparation</h4>
+          <div id="m-steps" class="pre-wrap"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
