@@ -90,5 +90,3 @@ Additional Notes
 Optional external libraries or frameworks can be used (e.g., for styling or validation) but must be mentioned in the submission.
 Creative enhancements are welcome, but basic requirements must be met first.
 
-Contact
-For support, reach out to info@unifiedmentor.com or visit unifiedmentor.com.
